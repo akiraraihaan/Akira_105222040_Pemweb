@@ -1,6 +1,6 @@
 <div class="dropdown-menu dropdown-menu-right ">
 	@if (Auth::user())
-		<a href="{{ route('logout') }}" class="dropdown-item"> 
+		<a href="{{ route('logout') }}" class="dropdown-item">
 			<i class="ni ni-user-run"></i> <span>Logout</span>
 		</a>
 	@else
@@ -20,7 +20,10 @@
         		</button>
       		</div>
 	      	<div class="modal-body">
-	        	<i> Tuliskan Inputan Form untuk login </i>
+	        	<label>Username</label>
+                <input type="text" class="form-control" name="username" required>
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" required>
 	      	</div>
 	      	<div class="modal-footer">
 	        	<button type="submit" class="btn btn-primary"> Submit </button>
