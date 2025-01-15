@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Jawaban\NomorDua;
 use App\Jawaban\NomorTiga;
 use App\Jawaban\NomorEmpat;
+use App\Models\Event;
 
 class SchedulerController extends Controller {
 
     public function home () {
 
-        $nomorTiga = new NomorTiga(); 
+        $nomorTiga = new NomorTiga();
         $events = $nomorTiga->getData();
 
         return view('home.index', compact('events'));
@@ -26,12 +27,12 @@ class SchedulerController extends Controller {
     public function getJson () {
 
         $nomorEmpat = new NomorEmpat();
-        return $nomorEmpat->getJson(); 
+        return $nomorEmpat->getJson();
     }
 
     public function getSelectedData (Request $request) {
 
-        $nomorTiga = new NomorTiga(); 
+        $nomorTiga = new NomorTiga();
         return $nomorTiga->getSelectedData($request);
     }
 
