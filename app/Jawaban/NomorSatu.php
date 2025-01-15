@@ -16,13 +16,16 @@ class NomorSatu {
             'password' => 'required'
         ]);
 
-        $username = $request->input('username');
-        $password = $request->input('password');
+        $login_type = filter_var($request->input('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $credentials = [
+            $login_type => $request->input('username'),
+            'password' => $request->input('password')
+        ];
 
-        if (Auth::attempt(['username' => $username, 'password' => $password])) {
+        if (Auth::attempt($credentials)) {
             return redirect()->route('event.home')->with('message', ['Login berhasil', 'success']);
         } else {
-            return redirect()->back()->with('message', ['Username atau password salah', 'danger']);
+            return redirect()->back()->with('message', ['Username/Email atau password salah', 'danger']);
         }
 	}
 

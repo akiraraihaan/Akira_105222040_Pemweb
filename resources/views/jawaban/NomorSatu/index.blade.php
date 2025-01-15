@@ -21,10 +21,28 @@
         		</button>
       		</div>
 	      	<div class="modal-body">
-	        	<label>Username</label>
-                <input type="text" class="form-control" name="username" required>
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" required>
+	        	<label>Username / Email</label>
+                <input type="text" class="form-control" name="username" placeholder="Masukkan username atau email" required>
+                <label class="mt-3">Password</label>
+                <div class="position-relative">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan password" required>
+                    <span class="position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="togglePassword()">
+                        <i class="fa fa-eye" id="toggleIcon"></i>
+                    </span>
+                </div>
+                <script>
+                    function togglePassword() {
+                        var x = document.getElementById("password");
+                        var icon = document.getElementById("toggleIcon");
+                        if (x.type === "password") {
+                            x.type = "text";
+                            icon.className = "fa fa-eye-slash";
+                        } else {
+                            x.type = "password";
+                            icon.className = "fa fa-eye";
+                        }
+                    }
+                </script>
 	      	</div>
 	      	<div class="modal-footer">
 	        	<button type="submit" class="btn btn-primary"> Submit </button>
