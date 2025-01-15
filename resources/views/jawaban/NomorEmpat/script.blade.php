@@ -4,7 +4,7 @@
 
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			headerToolbar: {
-				left: '',
+				left: 'today',
 				center: 'title',
 				right: 'prev,next'
 			},
@@ -39,5 +39,10 @@
 		});
 
 		calendar.render();
+
+		// Tambahkan event listener untuk tombol custom "Today" jika diperlukan
+		document.getElementById('my-today-button')?.addEventListener('click', function() {
+			calendar.today();
+		});
 	});
 </script>
