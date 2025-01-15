@@ -16,6 +16,10 @@ use App\Http\Controllers\SchedulerController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::post('auth', [AuthController::class, 'auth'])->name('auth');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 

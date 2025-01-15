@@ -22,7 +22,11 @@
 				<div id="calendar"> </div>
 			</div>
 			<div class="col-md-6">
-				@include('jawaban.NomorTiga.index')
+                @if(Auth::user())
+                    @include('jawaban.NomorTiga.index')
+                @else
+                    <h1 style="text-align: center; color: darkblue">Login untuk mengelola Event</h1>
+                @endif
 			</div>
 		</div>
 	</div>

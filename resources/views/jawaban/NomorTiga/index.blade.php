@@ -1,10 +1,10 @@
 <table class="table table-schedule">
     <thead>
         <tr>
-            <th>Nama</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Aksi</th>
+            <th style="text-align: center;">Nama</th>
+            <th style="text-align: center;">Start</th>
+            <th style="text-align: center;">End</th>
+            <th style="text-align: center;">Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->start }}</td>
                 <td>{{ $item->end }}</td>
-                <td>
+                <td style="text-align: center;">
                     <button class="btn btn-sm btn-primary edit-btn"
                             data-id="{{ $item->id }}"
                             data-toggle="modal"
@@ -59,8 +59,10 @@
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
