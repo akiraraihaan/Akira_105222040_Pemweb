@@ -8,7 +8,12 @@
         		</button>
       		</div>
 	      	<div class="modal-body">
-				<i> Tuliskan Inputan Form untuk tambah jadwal </i>
+                <label>Nama</label>
+                <input type="text" class="form-control" name="nama" required>
+                <label class="mt-2">Start</label>
+                <input type="date" class="form-control" name="start" required>
+                <label class="mt-2">End</label>
+                <input type="date" class="form-control" name="end" required>
 	      	</div>
 	      	<div class="modal-footer">
 	        	<button type="submit" class="btn btn-primary"> Submit </button>

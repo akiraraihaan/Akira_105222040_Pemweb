@@ -16,20 +16,20 @@ class NomorSatu {
             'password' => 'required'
         ]);
 
+        $username = $request->input('username');
+        $password = $request->input('password');
 
-        $credentials = $request->only('username', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('event.home');
+        if (Auth::attempt(['username' => $username, 'password' => $password])) {
+            return redirect()->route('event.home')->with('message', ['Login berhasil', 'success']);
+        } else {
+            return redirect()->back()->with('message', ['Username atau password salah', 'danger']);
         }
-        
-		return redirect()->route('event.home');
 	}
 
-	public function logout (Request $request) {
+	public function logout () {
 
 		// Tuliskan code untuk menangani proses logout
-
+        Auth::logout();
         return redirect()->route('event.home');
 	}
 }
