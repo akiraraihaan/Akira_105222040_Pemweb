@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 success: function(response) {
                     alert('Event berhasil dihapus');
-                    location.reload(); // Refresh halaman setelah berhasil hapus
+                    location.reload();
                 },
                 error: function(xhr, status, error) {
                     console.error('Error:', error);

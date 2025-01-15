@@ -12,15 +12,15 @@
 				year: 'numeric',
 				month: 'long'
 			},
-			locale: 'id', // menggunakan bahasa Indonesia
+			locale: 'id',
 			initialView: 'dayGridMonth',
 			editable: false,
 			dayMaxEvents: true,
 			events: '/event/get-json',
-			displayEventEnd: false, // tidak menampilkan waktu selesai di kalender
+			displayEventEnd: false,
 			eventDisplay: 'block',
 			dayHeaderFormat: {
-				weekday: 'short' // format header hari (SEN, SEL, dst)
+				weekday: 'short'
 			},
 			displayEventTime: true,
 			eventTimeFormat: {
@@ -40,7 +40,6 @@
 
 		calendar.render();
 
-		// Tambahkan event listener untuk tombol custom "Today" jika diperlukan
 		document.getElementById('my-today-button')?.addEventListener('click', function() {
 			calendar.today();
 		});
